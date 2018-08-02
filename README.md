@@ -1,5 +1,6 @@
 # CETEIcean Examples
-## TEI [Technical Council Working documents](http://teic.github.io/TCW). Sources in <http://github.com/TEIC/Documentation>. 
+## TEI 
+[Technical Council Working documents](http://teic.github.io/TCW). Sources in <http://github.com/TEIC/Documentation>. 
 Because of the way CETEIcean and GitHub Pages work, changes to documents in the repo show up very quickly. Very easy to make updates (e.g. during the course of a release).
 
 ## Digital Latin Library [viewer](http://digitallatin.github.io/viewer/calpurnius.html)
@@ -12,7 +13,7 @@ translation: "O(rnytus): "Let us rather, brother Corydon, seek this wood, those 
 
 Apparatus:
 
-9 ista] NG **Glaeser sqq.** antra PV **edd. ante Glaeser**
+9 ista] NG *Glaeser sqq.* antra PV *edd. ante Glaeser*
 
 translation: the manuscripts "N" and "G", and editions following Glaeser's put "antra" in line 8 and "ista" in line 9; "P", "V", and editions before Glaeser's do the reverse.
 
@@ -46,10 +47,10 @@ translation: the manuscripts "N" and "G", and editions following Glaeser's put "
   </app></l>
 ```
 
-So if you change antra to ista in line 8, ista has to change to antra in line 9.
+So if you change *antra* to *ista* in line 8, *ista* has to change to *antra* in line 9. Specifially, we are chaning the `<tei-lem>` in line 8 to a `<tei-rdg>`, and the corresponding `<tei-rdg>` into a `<tei-lem>`.
 
 ## Papyri.info
-See <http://papyri.info/ddbdp/p.fay;;110>. This uses the EpiDoc stylesheets to convert the XML source to HTML. This is a complex piece of software, over 11,000 lines of XSLT. Could CETEIcean replicate it? Yes, though it's a bit painful. We made some (what I now regard as) poor life choices with the source XML. E.g. 
+See <http://papyri.info/ddbdp/p.fay;;110>. This uses the EpiDoc stylesheets to convert the XML source to HTML. This is a complex piece of software, over 11,000 lines of XSLT. Could CETEIcean replicate it? [Yes](https://hcayless.github.io/Balisage-2018-CETEIcean/p.fay.110.html), though it's a bit painful. We made some (what I now regard as) poor life choices with the source XML. E.g. 
 ```xml
 <hi rend="diaeresis">ἰ</hi>δίωι
 ``` 
@@ -60,3 +61,5 @@ There are also bits that aren't stupid, but are nonetheless quite hard. `<gap re
 <gap reason="lost" quantity="3" unit="character"/><supplied reason="lost"> κα</supplied><unclear>ὶ</unclear>
 ```
 You don't want [...][κα]ὶ̣, but rather [... κα]ὶ̣. The example file does some of this stuff by post-processing the markup, but the majority is done with CETEIcean behaviors.
+
+Just for comparison's sake, you might wonder how much of this could be done with just CSS rather than JavaScript. [This](https://hcayless.github.io/Balisage-2018-CETEIcean/p.fay.110-1.html) is an example where some of the work has been done that way. You'll notice it's not altogether adequate...
