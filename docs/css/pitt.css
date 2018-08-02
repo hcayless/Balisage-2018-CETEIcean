@@ -39,6 +39,7 @@ div.apparatus tei-reg{
 div.apparatus tei-rdg {
   display:inline;
 }
+/* We could do some of the markup like this: */
 /*
 tei-lb::before {
   white-space: pre;
