@@ -67,3 +67,6 @@ div.notes doc-footnote doc-para {
 doc-imagedata>img {
     max-width: 100%;
 }
+doc-code {
+    font-family: monospace;
+}
