@@ -54,7 +54,7 @@ See <http://papyri.info/ddbdp/p.fay;;110>. This uses the EpiDoc stylesheets to c
 ```xml
 <hi rend="diaeresis">ἰ</hi>δίωι
 ``` 
-has to become "ϊδίωι papyrus" in the papyrus. So we have to grab the text surrounding the `<hi>` to make the apparatus entry. Word-breaking `<lb>`'s (which need to be hyphenated) have whitespace before them, which is stupid. 
+has to become "ϊδίωι papyrus" (note the diaeresis over the first iota) in the apparatus. So we have to grab the text surrounding the `<hi>` to make the apparatus entry. Word-breaking `<lb>`'s (which need to be hyphenated) have whitespace before them, which is stupid. 
 
 There are also bits that aren't stupid, but are nonetheless quite hard. `<gap reason="lost">` is represented as something like "[..]" (with square brackets). `<supplied reason="lost">` gets square brackets too. But when you have something like:
 ```xml
