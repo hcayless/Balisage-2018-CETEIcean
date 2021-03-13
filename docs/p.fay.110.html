@@ -169,7 +169,7 @@
         }
         c.attach(document.getElementsByTagName("body")[0], "appendChild", apparatus);
         // Clean up adjacent ][
-        var tmp = document.evaluate("//tei-text//span[not(@data-original)]/text()",document,null,XPathResult.ORDERED_NODE_ITERATOR_TYPE,null);
+        var tmp = document.evaluate("//tei-text//*[not(@data-original)]/text()",document,null,XPathResult.ORDERED_NODE_ITERATOR_TYPE,null);
         var spans = [];
         var n;
         while (n = tmp.iterateNext()) {
